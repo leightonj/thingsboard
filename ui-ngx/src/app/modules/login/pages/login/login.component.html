@@ -35,33 +35,6 @@
                   {{ 'login.login-with' | translate: {name: oauth2Client.name} }}
                 </a>
               </ng-container>
-              <div class="container-divider">
-                <div class="line"><mat-divider></mat-divider></div>
-                <div class="text mat-typography">{{ "login.or" | translate | uppercase }}</div>
-                <div class="line"><mat-divider></mat-divider></div>
-              </div>
-            </div>
-            <mat-form-field>
-              <mat-label translate>login.username</mat-label>
-              <input id="username-input" matInput type="email" autofocus formControlName="username" email required/>
-              <mat-icon matPrefix>email</mat-icon>
-              <mat-error *ngIf="loginFormGroup.get('username').invalid">
-                {{ 'user.invalid-email-format' | translate }}
-              </mat-error>
-            </mat-form-field>
-            <mat-form-field>
-              <mat-label translate>common.password</mat-label>
-              <input id="password-input" matInput type="password" formControlName="password"/>
-              <tb-toggle-password matSuffix></tb-toggle-password>
-              <mat-icon matPrefix>lock</mat-icon>
-            </mat-form-field>
-            <div fxLayoutAlign="end center" class="forgot-password">
-              <button class="tb-reset-password" mat-button type="button" routerLink="/login/resetPasswordRequest">{{ 'login.forgot-password' | translate }}
-              </button>
-            </div>
-            <div fxLayout="column" class="tb-action-button">
-              <button mat-raised-button color="accent" [disabled]="(isLoading$ | async)"
-                      type="submit">{{ 'login.login' | translate }}</button>
             </div>
           </div>
         </fieldset>
